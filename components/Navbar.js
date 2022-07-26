@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full h-20 shadow-xl">
+    <div className="fixed w-full h-20 shadow-xl z-10 bg-[#ecf0f3] ">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <Image src="/nico.svg" alt="/" width="100" height="100" />
         <div>
@@ -39,12 +39,14 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div className="md:hidden" onClick={handleNav}>
+        <div className="md:hidden" style={{marginRight: "15px"}} onClick={handleNav}>
           <AiOutlineMenu size={25} />
         </div>
       </div>
       <div
-        className={nav ? " md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""}
+        className={
+          nav ? " md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
+        }
       >
         <div
           className={
@@ -57,7 +59,7 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-between">
               <Image src="/nico.svg" alt="/" width="60" height={60} />
               <div
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="  p-3 cursor-pointer"
                 onClick={handleNav}
               >
                 <AiOutlineClose />
@@ -65,7 +67,7 @@ const Navbar = () => {
             </div>
             <div className="border-b border-x-gray-300 my-4">
               <p className="w-[85%] md:w-[95%] py-4 ">
-                Let's build something legendary toghether
+                Let's build something legendary together
               </p>
             </div>
           </div>
