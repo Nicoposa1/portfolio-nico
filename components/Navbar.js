@@ -1,45 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
+import {AiFillFilePdf} from "react-icons/ai";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+
   return (
-    <div className="fixed w-full h-20 shadow-xl z-10 bg-[#ecf0f3] ">
+    <div
+      className={
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-10 bg-[#ecf0f3]"
+          : "fixed w-full h-20  z-10 bg-[#ecf0f3] "
+      }
+    >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
-        <Image src="/nico.svg" alt="/" width="100" height="100" />
+        <a href="/">
+          <Image
+            className="cursor-pointer"
+            src="/nico.svg"
+            alt="/"
+            width="100"
+            height="100"
+          />
+        </a>
         <div>
           <ul className="hidden md:flex">
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
             </Link>
-            <Link href="/">
+            <Link href="/#about">
               <li className="ml-10 text-sm uppercase hover:border-b">About</li>
             </Link>
-            <Link href="/">
+            <Link href="/#skills">
               <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
             </Link>
-            <Link href="/">
+            <Link href="/#projects">
               <li className="ml-10 text-sm uppercase hover:border-b">
                 Projects
               </li>
             </Link>
-            <Link href="/">
+            <Link href="/#contact">
               <li className="ml-10 text-sm uppercase hover:border-b">
                 Contact
               </li>
             </Link>
           </ul>
         </div>
-        <div className="md:hidden" style={{marginRight: "15px"}} onClick={handleNav}>
+        <div
+          className="md:hidden"
+          style={{ marginRight: "15px" }}
+          onClick={handleNav}
+        >
           <AiOutlineMenu size={25} />
         </div>
       </div>
@@ -57,11 +87,10 @@ const Navbar = () => {
         >
           <div className="">
             <div className="flex w-full items-center justify-between">
-              <Image src="/nico.svg" alt="/" width="60" height={60} />
-              <div
-                className="  p-3 cursor-pointer"
-                onClick={handleNav}
-              >
+              <a href="/">
+                <Image src="/nico.svg" alt="/" width="60" height={60} />
+              </a>
+              <div className="  p-3 cursor-pointer" onClick={handleNav}>
                 <AiOutlineClose />
               </div>
             </div>
@@ -74,35 +103,56 @@ const Navbar = () => {
           <div className="py-4 fle flex-col">
             <ul className="uppercase">
               <Link href="/">
-                <li className="py-4 text-sm">Home</li>
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Home
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">About</li>
+              <Link href="/#about">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  About
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Skills</li>
+              <Link href="/#skills">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Skills
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Projects</li>
+              <Link href="/#projects">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Projects
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Contact</li>
+              <Link href="/#contact">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Contact
+                </li>
               </Link>
             </ul>
             <div className="pt-40 ">
               <p className="uppercase tracking-widest">Let's connect</p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%] ">
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaLinkedinIn />
+                  <a
+                    href="https://www.linkedin.com/in/nicolasposa/"
+                    target="_blank"
+                  >
+                    <FaLinkedinIn />
+                  </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaGithub />
+                  <a href="https://github.com/Nicoposa1" target="_blank">
+                    <FaGithub />
+                  </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <AiOutlineMail />
+                  <a href="mailto:nicoposa57@gmail.com" target="_blank">
+                    <AiOutlineMail />
+                  </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <BsFillPersonFill />
+                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank">
+                    <AiFillFilePdf />
+                  </a>
                 </div>
               </div>
             </div>
