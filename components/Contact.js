@@ -5,8 +5,21 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiFillFilePdf } from "react-icons/ai";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const sendeEmail = (e) => {
+    e.preventDefault();
+    // emailjs.sendForm("service_nxlvhta","template_2ttxrjc",e.target)
+    emailjs.sendForm('service_nxlvhta', 'template_2ttxrjc', e.target, 'WhfeZjo7fiHw7MuXC')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+     
+  };
+
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2  py-16 w-full ">
@@ -17,15 +30,6 @@ const Contact = () => {
         <div className="grid lg:grid-cols-5 gap-8 ">
           <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
-              {/* <div className="flex justify-center items-center">
-                <Image
-                  className="rounded-xl hover:scale-105 ease-in duration-300"
-                  src="https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                  height={100}
-                  width="200"
-                  alt="Contact"
-                />
-              </div> */}
               <div>
                 <h2 className="text-[#5651e5] mt-5">Nicolás Posa</h2>
                 <p>Frontend Developer</p>
@@ -47,17 +51,29 @@ const Contact = () => {
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="https://github.com/Nicoposa1" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://github.com/Nicoposa1"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FaGithub />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="mailto:nicoposa57@gmail.com" target="_blank" rel="noreferrer">
+                  <a
+                    href="mailto:nicoposa57@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <AiOutlineMail />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank" rel="noreferrer">
+                  <a
+                    href="/cv-frontend-Nicolas-Posa copy.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <AiFillFilePdf />
                   </a>
                 </div>
@@ -66,47 +82,33 @@ const Contact = () => {
           </div>
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4 ">
             <div className="p-4">
-              <form>
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Name</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
-                    </label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                    />
-                  </div>
+              <form onSubmit={sendeEmail}>
+                <div className="flex flex-col py-2">
+                  <label className="uppercase text-sm py-2">Name</label>
+                  <input
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    type="text"
+                    name="name"
+                  />
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
+                    name="user_email"
                   />
                 </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="text"
-                  />
-                </div>
+
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows={8}
+                    name="message"
                   ></textarea>
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button className="w-full p-4 text-gray-100 mt-4 cursor-pointer">
                   Send Message
                 </button>
               </form>
