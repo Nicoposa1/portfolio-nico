@@ -47,7 +47,7 @@ const data = [
   {
     id: 6,
     name: "Fun Punk web3",
-    image: "/funPunk.png",
+    image: "/funpunk.png",
     skills: "React - web3.js - Solidity",
     code: "https://github.com/Nicoposa1/Fun-Punks-Interface",
     web: "https://funpunks.netlify.app/",
