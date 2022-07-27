@@ -9,14 +9,14 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center ">
         <div>
           <p className="uppercase text-gray-600 text-sm tracking-widest">
-            let's build something together
+            let&apos;s build something together
           </p>
           <h1 className="py-4 text-gray-700">
-            Hi, I'm <span className="text-[#5651e5]">Nicolás</span>
+            Hi, I&apos;m <span className="text-[#5651e5]">Nicolás</span>
           </h1>
           <h1 className="py-2 text-gray-700">A Front-End Developer</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I'm a frontend developer specializing in building Web and Mobile
+            I&apos;m a frontend developer specializing in building Web and Mobile
             Apps who loves to take on challenging projects. I enjoy developing
             fast and intuitive Apps that are user friendly and easy to use.
           </p>
@@ -26,22 +26,35 @@ const Main = () => {
               <a
                 href="https://www.linkedin.com/in/nicolasposa/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedinIn />
               </a>
             </div>
             <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a href="https://github.com/Nicoposa1" target="_blank">
+              <a
+                href="https://github.com/Nicoposa1"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub />
               </a>
             </div>
             <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a href="mailto:nicoposa57@gmail.com" target="_blank">
+              <a
+                href="mailto:nicoposa57@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiOutlineMail />
               </a>
             </div>
             <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank">
+              <a
+                href="/cv-frontend-Nicolas-Posa copy.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiFillFilePdf />
               </a>
             </div>

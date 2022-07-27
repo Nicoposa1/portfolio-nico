@@ -77,7 +77,7 @@ const Projects = () => {
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projects
         </p>
-        <h2 className="py-4">What I've Built</h2>
+        <h2 className="py-4">What I&apos;ve Built</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
           {data.map((project, id) => (
@@ -100,14 +100,14 @@ const Projects = () => {
                 </p>
                 <div className="flex justify-center">
                   <Link href={project.code}>
-                    <a target="_blank">
+                    <a target="_blank" rel="noreferrer">
                       <p className="text-white sm:text-xs text-center sm:mr-1 md:mr-10 md:text-base mr-10 hover:underline cursor-pointer">
                         Source Code
                       </p>
                     </a>
                   </Link>
                   <Link href={project.web}>
-                    <a target="_blank">
+                    <a target="_blank" rel="noreferrer">
                       <p className="text-white sm:text-xs text-center md:text-base  hover:underline cursor-pointer">
                         App Running
                       </p>

@@ -33,7 +33,7 @@ const Navbar = () => {
       }
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
-        <a href="/">
+        <Link href="/">
           <Image
             className="cursor-pointer"
             src="/nico.svg"
@@ -41,7 +41,7 @@ const Navbar = () => {
             width="100"
             height="100"
           />
-        </a>
+        </Link>
         <div>
           <ul className="hidden md:flex">
             <Link href="/">
@@ -87,16 +87,16 @@ const Navbar = () => {
         >
           <div className="">
             <div className="flex w-full items-center justify-between">
-              <a href="/">
+              <Link href="/">
                 <Image src="/nico.svg" alt="/" width="60" height={60} />
-              </a>
+              </Link>
               <div className="  p-3 cursor-pointer" onClick={handleNav}>
                 <AiOutlineClose />
               </div>
             </div>
             <div className="border-b border-x-gray-300 my-4">
               <p className="w-[85%] md:w-[95%] py-4 ">
-                Let's build something legendary together
+                Let&apos;s build something legendary together
               </p>
             </div>
           </div>
@@ -129,28 +129,28 @@ const Navbar = () => {
               </Link>
             </ul>
             <div className="pt-40 ">
-              <p className="uppercase tracking-widest">Let's connect</p>
+              <p className="uppercase tracking-widest">Let&apos;s connect</p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%] ">
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <a
                     href="https://www.linkedin.com/in/nicolasposa/"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     <FaLinkedinIn />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="https://github.com/Nicoposa1" target="_blank">
+                  <a href="https://github.com/Nicoposa1" target="_blank" rel="noreferrer">
                     <FaGithub />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="mailto:nicoposa57@gmail.com" target="_blank">
+                  <a href="mailto:nicoposa57@gmail.com" target="_blank" rel="noreferrer">
                     <AiOutlineMail />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank">
+                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank" rel="noreferrer">
                     <AiFillFilePdf />
                   </a>
                 </div>

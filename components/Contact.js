@@ -17,15 +17,15 @@ const Contact = () => {
         <div className="grid lg:grid-cols-5 gap-8 ">
           <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
-              <div className="flex justify-center items-center">
-                <img
+              {/* <div className="flex justify-center items-center">
+                <Image
                   className="rounded-xl hover:scale-105 ease-in duration-300"
                   src="https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
                   height={100}
                   width="200"
                   alt="Contact"
                 />
-              </div>
+              </div> */}
               <div>
                 <h2 className="text-[#5651e5] mt-5">Nicolás Posa</h2>
                 <p>Frontend Developer</p>
@@ -41,22 +41,23 @@ const Contact = () => {
                   <a
                     href="https://www.linkedin.com/in/nicolasposa/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FaLinkedinIn />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="https://github.com/Nicoposa1" target="_blank">
+                  <a href="https://github.com/Nicoposa1" target="_blank" rel="noreferrer">
                     <FaGithub />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="mailto:nicoposa57@gmail.com" target="_blank">
+                  <a href="mailto:nicoposa57@gmail.com" target="_blank" rel="noreferrer">
                     <AiOutlineMail />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank">
+                  <a href="/cv-frontend-Nicolas-Posa copy.pdf" target="_blank" rel="noreferrer">
                     <AiFillFilePdf />
                   </a>
                 </div>
