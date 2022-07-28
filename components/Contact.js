@@ -70,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                   <a
-                    href="/cv-frontend-Nicolas-Posa copy.pdf"
+                    href="/cv-frontend-Nicolas-Posa.pdf"
                     target="_blank"
                     rel="noreferrer"
                   >
