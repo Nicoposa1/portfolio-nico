@@ -11,13 +11,21 @@ const Contact = () => {
   const sendeEmail = (e) => {
     e.preventDefault();
     // emailjs.sendForm("service_nxlvhta","template_2ttxrjc",e.target)
-    emailjs.sendForm('service_nxlvhta', 'template_2ttxrjc', e.target, 'WhfeZjo7fiHw7MuXC')
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
-     
+    emailjs
+      .sendForm(
+        "service_nxlvhta",
+        "template_2ttxrjc",
+        e.target,
+        "WhfeZjo7fiHw7MuXC"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -36,47 +44,46 @@ const Contact = () => {
                 <a href="mailto:nicoposa57@gmail.com">
                   <p className="py-4">nicoposa57@gmail.com</p>
                 </a>
-                <p>[+54] - 2966680502</p>
               </div>
               <p className="uppercase pt-8">Connect with me</p>
 
               <div className="flex items-center justify-between  py-4 ">
-                <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a
-                    href="https://www.linkedin.com/in/nicolasposa/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                <a
+                  href="https://www.linkedin.com/in/nicolasposa/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                     <FaLinkedinIn />
-                  </a>
-                </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a
-                    href="https://github.com/Nicoposa1"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  </div>
+                </a>
+                <a
+                  href="https://github.com/Nicoposa1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                     <FaGithub />
-                  </a>
-                </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a
-                    href="mailto:nicoposa57@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  </div>
+                </a>
+                <a
+                  href="mailto:nicoposa57@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                     <AiOutlineMail />
-                  </a>
-                </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a
-                    href="/cv-frontend-Nicolas-Posa.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  </div>
+                </a>
+                <a
+                  href="/CV-Software-DeveloperNicolas-Posa.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                     <AiFillFilePdf />
-                  </a>
-                </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

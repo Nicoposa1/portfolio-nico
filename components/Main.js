@@ -16,48 +16,49 @@ const Main = () => {
           </h1>
           <h1 className="py-2 text-gray-700">A Front-End Developer</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I&apos;m a frontend developer specializing in building Web and Mobile
-            Apps who loves to take on challenging projects. I enjoy developing
-            fast and intuitive Apps that are user friendly and easy to use.
+            I&apos;m a frontend developer specializing in building Web and
+            Mobile Apps who loves to take on challenging projects. I enjoy
+            developing fast and intuitive Apps that are user friendly and easy
+            to use.
           </p>
 
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 ">
-            <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a
-                href="https://www.linkedin.com/in/nicolasposa/"
-                target="_blank"
-                rel="noreferrer"
-              >
+            <a
+              href="https://www.linkedin.com/in/nicolasposa/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                 <FaLinkedinIn />
-              </a>
-            </div>
-            <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a
-                href="https://github.com/Nicoposa1"
-                target="_blank"
-                rel="noreferrer"
-              >
+              </div>
+            </a>
+            <a
+              href="https://github.com/Nicoposa1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                 <FaGithub />
-              </a>
-            </div>
-            <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a
-                href="mailto:nicoposa57@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
+              </div>
+            </a>
+            <a
+              href="mailto:nicoposa57@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                 <AiOutlineMail />
-              </a>
-            </div>
-            <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-              <a
-                href="/cv-frontend-Nicolas-Posa.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
+              </div>
+            </a>
+            <a
+              href="/CV-Software-DeveloperNicolas-Posa.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
                 <AiFillFilePdf />
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
