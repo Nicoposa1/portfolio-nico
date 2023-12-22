@@ -12,18 +12,33 @@ const About = () => {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2 text-gray-600">
-            I am passionate about education and technology, which leads me to be
-            in constant learning and growth.
+            Hey there! I'm Nicolás, a dedicated individual fueled by an
+            unwavering passion for technology. My journey in the development
+            world is a thrilling exploration driven by the belief in the
+            transformative power of continuous learning and growth.
           </p>
           <p className="py-2 text-gray-600">
-            I love thinking about the impact that technology has on people&apos;s
-            lives, it&apos;s incredible to be part of it, I&apos;m always looking for
-            professional challenges, I like to gain experience in large-scale
-            projects and great growth possibilities.
+            I specialize in crafting seamless mobile experiences using React
+            Native and delving into the intricacies of native iOS development
+            with Swift. The challenge of building intuitive and user-friendly
+            applications for both platforms is what keeps me excited and
+            motivated every day.
+          </p>
+          <p className="py-2 text-gray-600">
+            Beyond coding, I'm captivated by the realm of artificial
+            intelligence. Exploring the endless possibilities AI offers and
+            understanding its profound impact on our lives truly fascinates me.
+          </p>
+          <p className="py-2 text-gray-600">
+            My fascination extends to contemplating the profound impact that
+            technology has on people's lives. Being part of this transformative
+            force is nothing short of incredible. I'm always on the lookout for
+            professional challenges, thriving in environments with large-scale
+            projects and significant growth opportunities.
           </p>
           <Link href="/#projects">
             <p className="py-2 cursor-pointer underline text-gray-600">
-              Checkout some of my latest projects
+              Ready to dive into some of my latest projects?
             </p>
           </Link>
           {/* <Link href="/certificates" >
