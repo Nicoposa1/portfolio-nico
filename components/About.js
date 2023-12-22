@@ -12,7 +12,7 @@ const About = () => {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2 text-gray-600">
-            Hey there! I'm Nicolás, a dedicated individual fueled by an
+            Hey there! I&apos;m Nicolás, a dedicated individual fueled by an
             unwavering passion for technology. My journey in the development
             world is a thrilling exploration driven by the belief in the
             transformative power of continuous learning and growth.
@@ -25,14 +25,14 @@ const About = () => {
             motivated every day.
           </p>
           <p className="py-2 text-gray-600">
-            Beyond coding, I'm captivated by the realm of artificial
+            Beyond coding, I&apos;m captivated by the realm of artificial
             intelligence. Exploring the endless possibilities AI offers and
             understanding its profound impact on our lives truly fascinates me.
           </p>
           <p className="py-2 text-gray-600">
             My fascination extends to contemplating the profound impact that
-            technology has on people's lives. Being part of this transformative
-            force is nothing short of incredible. I'm always on the lookout for
+            technology has on people&apos;s lives. Being part of this transformative
+            force is nothing short of incredible. I&apos;m always on the lookout for
             professional challenges, thriving in environments with large-scale
             projects and significant growth opportunities.
           </p>

@@ -9,18 +9,18 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center ">
         <div>
           <p className="uppercase text-gray-600 text-sm tracking-widest">
-            Ready to bring your ideas to life? Let's create something amazing
+            Ready to bring your ideas to life? Let&apos;s create something amazing
             together!
           </p>
           <h1 className="py-4 text-gray-700">
-            Hi, I'm <span className="text-[#5651e5]">Nicolás</span>,
+            Hi, I&apos;m <span className="text-[#5651e5]">Nicolás</span>,
           </h1>
           <h2 className="py-2 text-gray-700">
             Passionate Mobile Developer and AI Enthusiast
           </h2>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
             As a frontend developer, I specialize in building Web and Mobile
-            Apps. I'm also deeply passionate about artificial intelligence and
+            Apps. I&apos;m also deeply passionate about artificial intelligence and
             its transformative potential. I thrive on tackling challenging
             projects and enjoy developing fast and intuitive Apps that are
             user-friendly and easy to use.
