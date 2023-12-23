@@ -34,18 +34,18 @@ const data = [
   },
   {
     id: 7,
-    name: "TailwindCSS",
-    image: "/tailwindcss.svg",
+    name: "Node.js",
+    image: "/node3.svg",
   },
   {
     id: 8,
-    name: "Firebase",
-    image: "/firebase.svg",
+    name: "Express.js",
+    image: "/express.svg",
   },
   {
     id: 9,
-    name: "Expo",
-    image: "/expo.svg",
+    name: "Swift",
+    image: "/swift.svg",
   },
   {
     id: 10,
@@ -54,13 +54,13 @@ const data = [
   },
   {
     id: 11,
-    name: "Web3.js",
-    image: "/web3.svg",
+    name: "TailwindCSS",
+    image: "/tailwindcss.svg",
   },
   {
     id: 12,
-    name: "Solidity",
-    image: "/solidity.svg",
+    name: "Firebase",
+    image: "/firebase.svg",
   },
 ];
 
@@ -75,10 +75,20 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
           {data.map((item, id) => {
             return (
-              <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300" key={id}>
+              <div
+                className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
+                key={id}
+              >
                 <div className="grid grid-cols-2 gap-4 justify-center items-center">
                   <div className="m-auto">
-                    <Image alt={item.name} src={item.image} width="64" height={64} />
+                    <Image
+                      alt={item.name}
+                      src={item.image}
+                      width="64"
+                      height={64}
+                      // layout="responsive"
+                      objectFit="contain"
+                    />
                   </div>
                   <div className="flex flex-col items-center justify-center">
                     <h3>{item.name}</h3>

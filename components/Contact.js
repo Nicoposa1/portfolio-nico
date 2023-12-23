@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
@@ -156,7 +155,7 @@ const Contact = () => {
                   />
                   {notName && name.length === 0 && (
                     <p className="text-red-500 text-xs pt-1">
-                      Please enter a valid name
+                      Please enter a name
                     </p>
                   )}
                 </div>
