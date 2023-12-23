@@ -7,9 +7,17 @@ const data = [
     id: 1,
     name: "Coinbase Mobile App",
     image: "/coinbase.png",
-    skills: "React Native - Redux - Expo",
+    skills: "React Native - Redux - expo",
     code: "https://github.com/Nicoposa1/Coinbase-RN",
     web: "https://www.youtube.com/watch?v=p_7WnmO25AQ",
+  },
+  {
+    id: 9,
+    name: "AI Project",
+    image: "/aiproject.png",
+    skills: "React Native - Redux -  Hugging Face API",
+    code: "https://github.com/Nicoposa1/AIMobileProject",
+    web: "https://www.youtube.com/watch?v=tCdNvqu6VJY",
   },
   {
     id: 2,
@@ -51,14 +59,6 @@ const data = [
     skills: "React - web3.js - Solidity",
     code: "https://github.com/Nicoposa1/Fun-Punks-Interface",
     web: "https://funpunks.netlify.app/",
-  },
-  {
-    id: 7,
-    name: "Mint Project",
-    image: "/mintproject.png",
-    skills: "Next.js - web3 - Solidity",
-    code: "https://github.com/Nicoposa1/RoloPunks-Next.js",
-    web: "https://rolopunks.vercel.app/",
   },
   {
     id: 8,
