@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Main from "../components/Main";
-import About from "../components/About";
+import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <Main />
-      <About />
+      <Experience />
       <Skills />
       <Projects/>
       <Contact />
