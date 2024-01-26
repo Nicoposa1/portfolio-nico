@@ -15,7 +15,7 @@ const Main = () => {
             Passionate Mobile Developer and AI Enthusiast
           </h2>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            As a frontend developer, I specialize in building Web and Mobile
+            As a software developer, I specialize in building Web and Mobile
             Apps. I&apos;m also deeply passionate about artificial intelligence
             and its transformative potential. I thrive on tackling challenging
             projects and enjoy developing fast and intuitive Apps that are

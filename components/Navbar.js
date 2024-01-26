@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import {AiFillFilePdf} from "react-icons/ai";
+import { AiFillFilePdf } from "react-icons/ai";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -47,8 +47,10 @@ const Navbar = () => {
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
             </Link>
-            <Link href="/#about">
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+            <Link href="/#experience">
+              <li className="ml-10 text-sm uppercase hover:border-b">
+                Experience
+              </li>
             </Link>
             <Link href="/#skills">
               <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
@@ -107,9 +109,9 @@ const Navbar = () => {
                   Home
                 </li>
               </Link>
-              <Link href="/#about">
+              <Link href="/#experience">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  About
+                  Experience
                 </li>
               </Link>
               <Link href="/#skills">
@@ -134,23 +136,36 @@ const Navbar = () => {
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                   <a
                     href="https://www.linkedin.com/in/nicolasposa/"
-                    target="_blank" rel="noreferrer"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <FaLinkedinIn />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="https://github.com/Nicoposa1" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://github.com/Nicoposa1"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FaGithub />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="mailto:nicoposa57@gmail.com" target="_blank" rel="noreferrer">
+                  <a
+                    href="mailto:nicoposa57@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <AiOutlineMail />
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/cv-frontend-Nicolas-Posa.pdf" target="_blank" rel="noreferrer">
+                  <a
+                    href="/cv-frontend-Nicolas-Posa.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <AiFillFilePdf />
                   </a>
                 </div>
