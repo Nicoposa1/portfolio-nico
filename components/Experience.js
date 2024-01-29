@@ -6,11 +6,11 @@ const Experience = () => {
   return (
     <section id="experience" className="w-full">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2">
-        <div className="space-y-8">
+        <div className="space-y-">
           <p className="text-xl tracking-widest uppercase text-[#5651e5]">
             Experience
           </p>
-          <h2 className="py-2 text-gray-700">Professional Experience</h2>
+          <h2 className="py-4 text-gray-700">Career Journey</h2>
           <div className="space-y-6">
             <div className="border rounded-lg p-6">
               <h3 className="text-xl font-bold">Software Developer</h3>

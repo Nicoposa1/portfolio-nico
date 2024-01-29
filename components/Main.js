@@ -8,11 +8,11 @@ const Main = () => {
     <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center ">
         <div>
-          <h1 className="py-4 text-gray-700">
+          <h1 className=" text-gray-700">
             Hi, I&apos;m <span className="text-[#5651e5]">Nicolás</span>,
           </h1>
           <h2 className="py-2 text-gray-700">
-            Passionate Mobile Developer and AI Enthusiast
+            Software developer and AI Enthusiast
           </h2>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
             As a software developer, I specialize in building Web and Mobile
