@@ -150,7 +150,7 @@ const Navbar = () => {
                   </a>
                 </div>
                 <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/cv-frontend-Nicolas-Posa.pdf" target="_blank" rel="noreferrer">
+                  <a href="/CV-Nicolas-Posa-Software-Developer.pdf" target="_blank" rel="noreferrer">
                     <AiFillFilePdf />
                   </a>
                 </div>

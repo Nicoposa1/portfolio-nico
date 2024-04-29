@@ -1,75 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-const data = [
-  {
-    id: 1,
-    name: "Coinbase Mobile App",
-    image: "/coinbase.png",
-    skills: "React Native - Redux - expo",
-    code: "https://github.com/Nicoposa1/Coinbase-RN",
-    web: "https://www.youtube.com/watch?v=p_7WnmO25AQ",
-  },
-  {
-    id: 9,
-    name: "AI Project",
-    image: "/aiproject.png",
-    skills: "React Native - Redux -  Hugging Face API",
-    code: "https://github.com/Nicoposa1/AIMobileProject",
-    web: "https://www.youtube.com/watch?v=tCdNvqu6VJY",
-  },
-  {
-    id: 2,
-    name: "Dolar Arg",
-    image: "/dolarArg.png",
-    skills: "React Native - Redux",
-    code: "https://github.com/Nicoposa1/DolarArgentina",
-    web: "https://github.com/Nicoposa1/DolarArgentina",
-  },
-  {
-    id: 3,
-    name: "Chat Mobile App",
-    image: "/chat-app.png",
-    skills: "React Native - Firebase - Gifted Chat",
-    code: "https://github.com/Nicoposa1/rn-chat-firebase",
-    web: "https://www.youtube.com/shorts/IchDkV6ujsk",
-  },
-  {
-    id: 4,
-    name: "Crypto Tracker Mobile App",
-    image: "/cryptoTracker.png",
-    skills: "React Native - Async Storage - Expo",
-    code: "https://github.com/Nicoposa1/CryptoTracker-react-native",
-    web: "https://github.com/Nicoposa1/CryptoTracker-react-native",
-  },
-  {
-    id: 5,
-    name: "Prokedex Mobile App",
-    image: "/mq2.jpeg",
-    skills: "React Native - Formik - Async Storage",
-    code: "https://github.com/Nicoposa1/Pokedex-React-Native",
-    web: "https://www.youtube.com/watch?v=1WTZseOFozs",
-  },
-  {
-    id: 6,
-    name: "Fun Punk web3",
-    image: "/funpunk.png",
-    skills: "React - web3.js - Solidity",
-    code: "https://github.com/Nicoposa1/Fun-Punks-Interface",
-    web: "https://funpunks.netlify.app/",
-  },
-  {
-    id: 8,
-    name: "PetGram",
-    image: "/petgram.png",
-    skills: "React Native - Redux - Expo",
-    code: "https://github.com/Nicoposa1/rn-chat-firebase",
-    web: "https://www.youtube.com/watch?v=1WTZseOFozs",
-  },
-];
+import { projects } from "./data";
 
 const Projects = () => {
+  const data = projects;
   return (
     <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
@@ -86,6 +21,7 @@ const Projects = () => {
             >
               <Image
                 className="rounded-xl group-hover:opacity-10 object-contain"
+                alt="project image"
                 src={project.image}
                 width={500}
                 height={300}

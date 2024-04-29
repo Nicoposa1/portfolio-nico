@@ -1,70 +1,9 @@
 import React from "react";
 import Image from "next/image";
-
-const data = [
-  {
-    id: 1,
-    name: "javascript",
-    image: "/javascript.svg",
-  },
-  {
-    id: 2,
-    name: "TypeScript",
-    image: "/typescript.svg",
-  },
-  {
-    id: 3,
-    name: "React",
-    image: "/react-2.svg",
-  },
-  {
-    id: 4,
-    name: "React Native",
-    image: "/react-2.svg",
-  },
-  {
-    id: 5,
-    name: "Redux",
-    image: "/redux.svg",
-  },
-  {
-    id: 6,
-    name: "Next.js",
-    image: "/next.svg",
-  },
-  {
-    id: 7,
-    name: "Node.js",
-    image: "/node3.svg",
-  },
-  {
-    id: 8,
-    name: "Express.js",
-    image: "/express.svg",
-  },
-  {
-    id: 9,
-    name: "Swift",
-    image: "/swift.svg",
-  },
-  {
-    id: 10,
-    name: "SQLite",
-    image: "/sqlite.svg",
-  },
-  {
-    id: 11,
-    name: "TailwindCSS",
-    image: "/tailwindcss.svg",
-  },
-  {
-    id: 12,
-    name: "Firebase",
-    image: "/firebase.svg",
-  },
-];
+import { skills } from "./data";
 
 const Skills = () => {
+  const data = skills;
   return (
     <div id="skills" className="w-full lg:h-screen p-2">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
