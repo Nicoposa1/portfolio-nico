@@ -88,8 +88,8 @@ export const skills = [
   },
   {
     id: 5,
-    name: "Redux",
-    image: "/redux.svg",
+    name: "Swift",
+    image: "/swift.svg",
   },
   {
     id: 6,
@@ -108,13 +108,13 @@ export const skills = [
   },
   {
     id: 9,
-    name: "Swift",
-    image: "/swift.svg",
+    name: "Redux",
+    image: "/redux.svg",
   },
   {
     id: 10,
-    name: "SQLite",
-    image: "/sqlite.svg",
+    name: "MongoDB",
+    image: "/mongodb.svg",
   },
   {
     id: 11,

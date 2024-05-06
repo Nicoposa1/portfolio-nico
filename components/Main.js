@@ -12,10 +12,10 @@ const Main = () => {
             Hi, I&apos;m <span className="text-[#5651e5]">Nicolás</span>,
           </h1>
           <h2 className="py-2 text-gray-700">
-            Software developer and AI Enthusiast
+            Software developer
           </h2>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            As a software developer, I specialize in building Web and Mobile
+            I specialize in building Web and Mobile
             Apps. I&apos;m also deeply passionate about artificial intelligence
             and its transformative potential. I thrive on tackling challenging
             projects and enjoy developing fast and intuitive Apps that are

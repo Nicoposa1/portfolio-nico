@@ -25,7 +25,6 @@ const Skills = () => {
                       src={item.image}
                       width="64"
                       height={64}
-                      // layout="responsive"
                       objectFit="contain"
                     />
                   </div>
