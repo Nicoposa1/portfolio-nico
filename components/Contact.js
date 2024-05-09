@@ -54,7 +54,7 @@ const Contact = () => {
             <div className="lg:p-4 h-full">
               <div>
                 <h2 className="text-[#5651e5] mt-5">Nicolás Posa</h2>
-                <p>Frontend Developer</p>
+                <p>Software Developer</p>
                 <a href="mailto:nicoposa57@gmail.com">
                   <p className="py-4">nicoposa57@gmail.com</p>
                 </a>
