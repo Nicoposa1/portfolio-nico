@@ -41,11 +41,11 @@ export const projects = [
   },
   {
     id: 5,
-    name: "Prokedex Mobile App",
-    image: "/pokedex.webp",
-    skills: "React Native - Formik - Async Storage",
-    code: "https://github.com/Nicoposa1/Pokedex-React-Native",
-    web: "https://www.youtube.com/watch?v=1WTZseOFozs",
+    name: "Nike Mobile App",
+    image: "/nike-project-1.webp",
+    skills: "React Native - Node - MongoDB - Express - Firebase",
+    code: "https://github.com/Nicoposa1/NikeStoreApp",
+    web: "https://youtu.be/gDR4072ReeI",
   },
   {
     id: 6,
