@@ -25,11 +25,11 @@ export const projects = [
   },
   {
     id: 3,
-    name: "Chat Mobile App",
-    image: "/chat-app.webp",
-    skills: "React Native - Firebase - Gifted Chat",
-    code: "https://github.com/Nicoposa1/rn-chat-firebase",
-    web: "https://www.youtube.com/shorts/IchDkV6ujsk",
+    name: "Nike Mobile App",
+    image: "/nike-project-1.webp",
+    skills: "React Native - Node - MongoDB - Express - Firebase",
+    code: "https://github.com/Nicoposa1/NikeStoreApp",
+    web: "https://youtu.be/gDR4072ReeI",
   },
   {
     id: 4,
@@ -41,11 +41,11 @@ export const projects = [
   },
   {
     id: 5,
-    name: "Nike Mobile App",
-    image: "/nike-project-1.webp",
-    skills: "React Native - Node - MongoDB - Express - Firebase",
-    code: "https://github.com/Nicoposa1/NikeStoreApp",
-    web: "https://youtu.be/gDR4072ReeI",
+    name: "Chat Mobile App",
+    image: "/chat-app.webp",
+    skills: "React Native - Firebase - Gifted Chat",
+    code: "https://github.com/Nicoposa1/rn-chat-firebase",
+    web: "https://www.youtube.com/shorts/IchDkV6ujsk",
   },
   {
     id: 6,
