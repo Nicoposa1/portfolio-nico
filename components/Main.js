@@ -51,7 +51,7 @@ const Main = () => {
               </div>
             </a>
             <a
-              href="/CV-Nicolas-Posa-Software-Developer.pdf"
+              href="/CV-Software-Developer-NicolasPosa.pdf"
               target="_blank"
               rel="noreferrer"
             >
