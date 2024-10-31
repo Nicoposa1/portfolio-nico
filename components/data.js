@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: 2,
-    name: "Real Esta App",
+    name: "Real Estate App",
     image: "/project.png",
     skills: "React Native - Redux - Expo - TypeScript",
     code: "https://github.com/Nicoposa1/RealEstateApp",
