@@ -90,7 +90,7 @@ const Contact = () => {
                   </div>
                 </a>
                 <a
-                  href="/CV-Software-Developer-NicolasPosa.pdf"
+                  href="/CV-Software-Developer-Nicolas-Posa.pdf"
                   target="_blank"
                   rel="noreferrer"
                 >
