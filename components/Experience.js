@@ -38,7 +38,7 @@ const Experience = () => {
             </div>
             <div className="border rounded-lg p-6">
               <h3 className="text-xl font-bold">Software Developer</h3>
-              <p className="text-gray-500">Innovasoft, Feb 2023 - Present</p>
+              <p className="text-gray-500">Innovasoft, Feb 2023 - Feb 2025</p>
               <ul className="list-disc list-inside mt-2 text-gray-700">
                 <li>
                   Developed and maintained mobile applications using React
