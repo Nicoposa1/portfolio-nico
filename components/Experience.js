@@ -32,7 +32,7 @@ const Experience = () => {
                 </li>
                 <li>
                   Ensuring continuous delivery of new features and enhancements
-                  for both Android and iOS platforms.
+                  for both Android and iOS platforms. 
                 </li>
               </ul>
             </div>
