@@ -14,6 +14,30 @@ const Experience = () => {
           <div className="space-y-6">
             <div className="border rounded-lg p-6">
               <h3 className="text-xl font-bold">Software Developer</h3>
+              <p className="text-gray-500">
+                Boreal IT (Client: Banco Comafi), Feb 2025 - Present
+              </p>
+              <ul className="list-disc list-inside mt-2 text-gray-700">
+                <li>
+                  Developing and maintaining Banco Comafi’s mobile banking
+                  application using React Native.
+                </li>
+                <li>
+                  Improving performance, stability, and user experience for
+                  thousands of active users.
+                </li>
+                <li>
+                  Collaborating with cross-functional teams to implement secure
+                  and scalable solutions.
+                </li>
+                <li>
+                  Ensuring continuous delivery of new features and enhancements
+                  for both Android and iOS platforms.
+                </li>
+              </ul>
+            </div>
+            <div className="border rounded-lg p-6">
+              <h3 className="text-xl font-bold">Software Developer</h3>
               <p className="text-gray-500">Innovasoft, Feb 2023 - Present</p>
               <ul className="list-disc list-inside mt-2 text-gray-700">
                 <li>
