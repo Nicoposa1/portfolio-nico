@@ -25,7 +25,7 @@ const Projects = () => {
           <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold">
             Projects
           </p>
-          <h2 className="py-4 text-3xl font-bold text-gray-800">What I've Built</h2>
+          <h2 className="py-4 text-3xl font-bold text-gray-800">What I&apos;ve Built</h2>
           <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4"></div>
         </motion.div>
 

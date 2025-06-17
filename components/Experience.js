@@ -37,7 +37,7 @@ const Experience = () => {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-[#5651e5] mr-2">•</span>
-                  <span>Developing and maintaining Banco Comafi's mobile banking application using React Native.</span>
+                  <span>Developing and maintaining Banco Comafi&apos;s mobile banking application using React Native.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#5651e5] mr-2">•</span>
