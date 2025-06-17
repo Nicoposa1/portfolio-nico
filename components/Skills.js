@@ -1,41 +1,70 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { skills } from "./data";
 
 const Skills = () => {
   const data = skills;
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div id="skills" className="w-full lg:h-screen p-2">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Skills
-        </p>
-        <h2 className="py-4">What I Can Do</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
-          {data.map((item, id) => {
-            return (
-              <div
-                className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
-                key={id}
-              >
-                <div className="grid grid-cols-2 gap-4 justify-center items-center">
-                  <div className="m-auto">
-                    <Image
-                      alt={item.name}
-                      src={item.image}
-                      width="64"
-                      height={64}
-                      objectFit="contain"
-                    />
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <h3>{item.name}</h3>
-                  </div>
+    <div id="skills" className="w-full bg-gradient-to-b from-white to-gray-50 py-16">
+      <div className="max-w-[1240px] mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold">
+            Skills
+          </p>
+          <h2 className="py-4 text-3xl font-bold text-gray-800">What I Can Do</h2>
+          <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4"></div>
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {data.map((skill, id) => (
+            <motion.div
+              key={id}
+              variants={item}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <div className="relative w-16 h-16">
+                  <Image
+                    src={skill.image}
+                    alt={skill.name}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-800">{skill.name}</h3>
               </div>
-            );
-          })}
-        </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

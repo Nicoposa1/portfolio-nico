@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiFillFilePdf } from "react-icons/ai";
@@ -15,10 +16,33 @@ const Contact = () => {
   const [notEmail, setNotEmail] = React.useState(false);
   const [notMessage, setNotMessage] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+
+  const socialLinks = [
+    {
+      icon: <FaLinkedinIn />,
+      href: "https://www.linkedin.com/in/nicolasposa/",
+      label: "LinkedIn"
+    },
+    {
+      icon: <FaGithub />,
+      href: "https://github.com/Nicoposa1",
+      label: "GitHub"
+    },
+    {
+      icon: <AiOutlineMail />,
+      href: "mailto:nicoposa57@gmail.com",
+      label: "Email"
+    },
+    {
+      icon: <AiFillFilePdf />,
+      href: "/CV-Nicolas-Posa-Software-Developer.pdf",
+      label: "Resume"
+    }
+  ];
+
   const sendeEmail = (e) => {
     setLoading(true);
     e.preventDefault();
-    // emailjs.sendForm("service_nxlvhta","template_2ttxrjc",e.target)
     emailjs
       .sendForm(
         "service_nxlvhta",
@@ -43,190 +67,161 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="w-full lg:h-screen">
-      <div className="max-w-[1240px] m-auto px-2  py-16 w-full ">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Contact
-        </p>
-        <h2 className="py-4">Get In Touch</h2>
-        <div className="grid lg:grid-cols-5 gap-8 ">
-          <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadow-gray-400 rounded-xl p-4">
-            <div className="lg:p-4 h-full">
-              <div>
-                <h2 className="text-[#5651e5] mt-5">Nicolás Posa</h2>
-                <p>Software Developer</p>
-                <a href="mailto:nicoposa57@gmail.com">
-                  <p className="py-4">nicoposa57@gmail.com</p>
-                </a>
-              </div>
-              <p className="uppercase pt-8">Connect with mesdfsd</p>
+    <div id="contact" className="w-full bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="max-w-[1240px] mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold">
+            Contact
+          </p>
+          <h2 className="py-4 text-3xl font-bold text-gray-800">Get In Touch</h2>
+          <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4"></div>
+        </motion.div>
 
-              <div className="flex items-center justify-between  py-4 ">
-                <a
-                  href="https://www.linkedin.com/in/nicolasposa/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaLinkedinIn />
-                  </div>
-                </a>
-                <a
-                  href="https://github.com/Nicoposa1"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaGithub />
-                  </div>
-                </a>
-                <a
-                  href="mailto:nicoposa57@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <AiOutlineMail />
-                  </div>
-                </a>
-                <a
-                  href="/CV-Nicolas-Posa-Software-Developer.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="rounded-full shadow-md shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <AiFillFilePdf />
-                  </div>
-                </a>
+        <div className="grid lg:grid-cols-5 gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="col-span-3 lg:col-span-2 w-full bg-white  shadow-gray-200 rounded-xl p-8"
+          >
+            <div className="h-full">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold text-[#5651e5] mb-2">Nicolás Posa</h2>
+                <p className="text-gray-600">Software Developer</p>
               </div>
-            </div>
-          </div>
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4 ">
-            <div className="p-4">
-              <form
-                onSubmit={(e) => {
-                  if (
-                    e.target.name.value === "" ||
-                    e.target.user_email.value === "" ||
-                    e.target.message.value === ""
-                  ) {
-                    e.preventDefault();
-                    if (e.target.name.value === "") {
-                      setNotName(true);
-                    } else {
-                      setNotName(false);
-                    }
-                    if (
-                      e.target.user_email.value === "" ||
-                      !email.includes("@") ||
-                      !email.includes(".")
-                    ) {
-                      setNotEmail(true);
-                    } else {
-                      setNotEmail(false);
-                    }
-                    if (e.target.message.value === "") {
-                      setNotMessage(true);
-                    } else {
-                      setNotMessage(false);
-                    }
-                  } else {
-                    sendeEmail(e);
-                    setNotName(false);
-                    setNotEmail(false);
-                    setNotMessage(false);
-                  }
-                }}
-              >
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Name</label>
-                  <input
-                    className={`border-2 rounded-lg p-3 ${
-                      notName && name.length === 0
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    }`}
-                    type="text"
-                    name="name"
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
-                    value={name}
-                  />
-                  {notName && name.length === 0 && (
-                    <p className="text-red-500 text-xs pt-1">
-                      Please enter a name
-                    </p>
-                  )}
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className={`border-2 rounded-lg p-3 ${
-                      notEmail && email.length === 0
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    }`}
-                    type="email"
-                    name="user_email"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                    value={email}
-                  />
-                  {notEmail && email.length === 0 && (
-                    <p className="text-red-500 text-xs pt-1">
-                      Please enter a valid email
-                    </p>
-                  )}
-                </div>
+              
+              <p className="uppercase text-gray-600 font-semibold mb-6">Connect with me</p>
 
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Message</label>
-                  <textarea
-                    className={`border-2 rounded-lg p-3 ${
-                      notMessage && message.length === 0
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    }`}
-                    rows={8}
-                    name="message"
-                    onChange={(e) => {
-                      setMessage(e.target.value);
-                    }}
-                    value={message}
-                  ></textarea>
-                  {notMessage && message.length === 0 && (
-                    <p className="text-red-500 text-xs pt-1">
-                      Please enter a message
-                    </p>
-                  )}
-                </div>
-                <button className="w-full p-4 text-gray-100 mt-4 cursor-pointer">
-                  {loading ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-6 w-6 border-b-4 border-gray-100"></div>
+              <div className="flex items-center justify-between">
+                {socialLinks.map((link, index) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group"
+                  >
+                    <div className="rounded-full bg-gray-50 p-4 cursor-pointer 
+                                  transition-all duration-300 hover:bg-[#5651e5] hover:text-white">
+                      <span className="text-xl">{link.icon}</span>
                     </div>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
-              </form>
+                    <span className="sr-only">{link.label}</span>
+                  </motion.a>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="col-span-3 w-full bg-white  rounded-xl p-8"
+          >
+            <form onSubmit={(e) => {
+              if (name === "" || email === "" || message === "") {
+                e.preventDefault();
+                setNotName(name === "");
+                setNotEmail(email === "" || !email.includes("@") || !email.includes("."));
+                setNotMessage(message === "");
+              } else {
+                sendeEmail(e);
+                setNotName(false);
+                setNotEmail(false);
+                setNotMessage(false);
+              }
+            }}>
+              <div className="flex flex-col py-2">
+                <label className="uppercase text-sm py-2 text-gray-600 font-semibold">Name</label>
+                <input
+                  className={`border-2 rounded-lg p-3 focus:outline-none focus:border-[#5651e5] transition-colors duration-300 ${
+                    notName ? "border-red-500" : "border-gray-200"
+                  }`}
+                  type="text"
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
+                {notName && (
+                  <p className="text-red-500 text-xs pt-1">Please enter a name</p>
+                )}
+              </div>
+
+              <div className="flex flex-col py-2">
+                <label className="uppercase text-sm py-2 text-gray-600 font-semibold">Email</label>
+                <input
+                  className={`border-2 rounded-lg p-3 focus:outline-none focus:border-[#5651e5] transition-colors duration-300 ${
+                    notEmail ? "border-red-500" : "border-gray-200"
+                  }`}
+                  type="email"
+                  name="user_email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+                {notEmail && (
+                  <p className="text-red-500 text-xs pt-1">Please enter a valid email</p>
+                )}
+              </div>
+
+              <div className="flex flex-col py-2">
+                <label className="uppercase text-sm py-2 text-gray-600 font-semibold">Message</label>
+                <textarea
+                  className={`border-2 rounded-lg p-3 focus:outline-none focus:border-[#5651e5] transition-colors duration-300 ${
+                    notMessage ? "border-red-500" : "border-gray-200"
+                  }`}
+                  rows={8}
+                  name="message"
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                ></textarea>
+                {notMessage && (
+                  <p className="text-red-500 text-xs pt-1">Please enter a message</p>
+                )}
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full p-4 bg-[#5651e5] text-white rounded-lg mt-4 font-semibold hover:bg-[#4a45c4] transition-colors duration-300"
+                type="submit"
+              >
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                  </div>
+                ) : (
+                  "Send Message"
+                )}
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
-        <div className="flex justify-center pt-12">
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex justify-center pt-12"
+        >
           <Link href="/">
-            <div className="rounded-full shadow-md shadow-gray-400 p-4 cursor-pointer hover:scale-105 ease-in duration-300">
-              <HiOutlineChevronDoubleUp
-                size={20}
-                className="m-auto text-[#5651e5]  "
-              />
-            </div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-white shadow-lg shadow-gray-200 p-4 cursor-pointer hover:shadow-xl transition-all duration-300"
+            >
+              <HiOutlineChevronDoubleUp size={24} className="text-[#5651e5]" />
+            </motion.div>
           </Link>
-        </div>
+        </motion.div>
       </div>
-      <Toaster />
+      <Toaster position="top-center" />
     </div>
   );
 };

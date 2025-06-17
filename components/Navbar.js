@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import {AiFillFilePdf} from "react-icons/ai";
+import { AiFillFilePdf } from "react-icons/ai";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -24,142 +25,174 @@ const Navbar = () => {
     window.addEventListener("scroll", handleShadow);
   }, []);
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/#experience", label: "Experience" },
+    { href: "/#skills", label: "Skills" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/#contact", label: "Contact" }
+  ];
+
+  const socialLinks = [
+    {
+      icon: <FaLinkedinIn />,
+      href: "https://www.linkedin.com/in/nicolasposa/",
+      label: "LinkedIn"
+    },
+    {
+      icon: <FaGithub />,
+      href: "https://github.com/Nicoposa1",
+      label: "GitHub"
+    },
+    {
+      icon: <AiOutlineMail />,
+      href: "mailto:nicoposa57@gmail.com",
+      label: "Email"
+    },
+    {
+      icon: <AiFillFilePdf />,
+      href: "/CV-Nicolas-Posa-Software-Developer.pdf",
+      label: "Resume"
+    }
+  ];
+
   return (
-    <div
-      className={
-        shadow
-          ? "fixed w-full h-20 shadow-xl z-10 bg-[#ecf0f3]"
-          : "fixed w-full h-20  z-10 bg-[#ecf0f3] "
-      }
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed w-full h-20 z-50 transition-all duration-300 ${
+        shadow ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-white/50 backdrop-blur-sm"
+      }`}
     >
-      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
+      <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link href="/">
-          <Image
-            className="cursor-pointer"
-            src="/nico.svg"
-            alt="/"
-            width="100"
-            height="100"
-          />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Image
+              className="cursor-pointer"
+              src="/nico.svg"
+              alt="Nicolás Posa"
+              width="100"
+              height="100"
+              priority
+            />
+          </motion.div>
         </Link>
+
         <div>
           <ul className="hidden md:flex">
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
-            </Link>
-            <Link href="/#experience">
-              <li className="ml-10 text-sm uppercase hover:border-b">Experience</li>
-            </Link>
-            <Link href="/#skills">
-              <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
-            </Link>
-            <Link href="/#projects">
-              <li className="ml-10 text-sm uppercase hover:border-b">
-                Projects
-              </li>
-            </Link>
-            <Link href="/#contact">
-              <li className="ml-10 text-sm uppercase hover:border-b">
-                Contact
-              </li>
-            </Link>
+            {navLinks.map((link, index) => (
+              <motion.li
+                key={link.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="ml-10 text-sm uppercase"
+              >
+                <Link href={link.href}>
+                  <span className="relative group">
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5651e5] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </motion.li>
+            ))}
           </ul>
         </div>
-        <div
-          className="md:hidden"
-          style={{ marginRight: "15px" }}
+
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="md:hidden cursor-pointer"
           onClick={handleNav}
         >
           <AiOutlineMenu size={25} />
-        </div>
+        </motion.div>
       </div>
-      <div
-        className={
-          nav ? " md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
-        }
-      >
-        <div
-          className={
-            nav
-              ? "md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
-              : "fixed left-[-100%] top-0  p-10 ease-in duration-500"
-          }
-        >
-          <div className="">
-            <div className="flex w-full items-center justify-between">
-              <Link href="/">
-                <Image src="/nico.svg" alt="/" width="60" height={60} />
-              </Link>
-              <div className="  p-3 cursor-pointer" onClick={handleNav}>
-                <AiOutlineClose />
-              </div>
-            </div>
-            <div className="border-b border-x-gray-300 my-4">
-              <p className="w-[85%] md:w-[95%] py-4 ">
-                Let&apos;s build something legendary together
-              </p>
-            </div>
-          </div>
-          <div className="py-4 fle flex-col">
-            <ul className="uppercase">
-              <Link href="/">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Home
-                </li>
-              </Link>
-              <Link href="/#experience">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Experience
-                </li>
-              </Link>
-              <Link href="/#skills">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Skills
-                </li>
-              </Link>
-              <Link href="/#projects">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Projects
-                </li>
-              </Link>
-              <Link href="/#contact">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Contact
-                </li>
-              </Link>
-            </ul>
-            <div className="pt-40 ">
-              <p className="uppercase tracking-widest">Let&apos;s connect</p>
-              <div className="flex items-center justify-between my-4 w-full sm:w-[80%] ">
-                <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a
-                    href="https://www.linkedin.com/in/nicolasposa/"
-                    target="_blank" rel="noreferrer"
+
+      <AnimatePresence>
+        {nav && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="md:hidden fixed left-0 top-0 w-full h-screen bg-black/70"
+          >
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 20 }}
+              className="fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-white p-10"
+            >
+              <div>
+                <div className="flex w-full items-center justify-between">
+                  <Link href="/">
+                    <Image src="/nico.svg" alt="Nicolás Posa" width="60" height={60} priority />
+                  </Link>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-3 cursor-pointer"
+                    onClick={handleNav}
                   >
-                    <FaLinkedinIn />
-                  </a>
+                    <AiOutlineClose size={25} />
+                  </motion.div>
                 </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="https://github.com/Nicoposa1" target="_blank" rel="noreferrer">
-                    <FaGithub />
-                  </a>
-                </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="mailto:nicoposa57@gmail.com" target="_blank" rel="noreferrer">
-                    <AiOutlineMail />
-                  </a>
-                </div>
-                <div className="rounded-full shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <a href="/CV-Nicolas-Posa-Software-Developer.pdf" target="_blank" rel="noreferrer">
-                    <AiFillFilePdf />
-                  </a>
+                <div className="border-b border-gray-200 my-4">
+                  <p className="w-[85%] md:w-[95%] py-4 text-gray-600">
+                    Let&apos;s build something legendary together
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+              <div className="py-4 flex flex-col">
+                <ul className="uppercase">
+                  {navLinks.map((link, index) => (
+                    <motion.li
+                      key={link.label}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      onClick={() => setNav(false)}
+                      className="py-4 text-sm"
+                    >
+                      <Link href={link.href}>
+                        <span className="hover:text-[#5651e5] transition-colors duration-300">
+                          {link.label}
+                        </span>
+                      </Link>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <div className="pt-40">
+                  <p className="uppercase tracking-widest text-gray-600 mb-4">Let&apos;s connect</p>
+                  <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
+                    {socialLinks.map((link, index) => (
+                      <motion.a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="rounded-full bg-gray-50 p-3 cursor-pointer hover:bg-[#5651e5] hover:text-white transition-all duration-300"
+                      >
+                        {link.icon}
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
