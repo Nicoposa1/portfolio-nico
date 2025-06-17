@@ -59,7 +59,7 @@ const Contact = () => {
                   <p className="py-4">nicoposa57@gmail.com</p>
                 </a>
               </div>
-              <p className="uppercase pt-8">Connect with me</p>
+              <p className="uppercase pt-8">Connect with mesdfsd</p>
 
               <div className="flex items-center justify-between  py-4 ">
                 <a
