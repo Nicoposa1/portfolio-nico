@@ -6,7 +6,9 @@ import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import BackToTop from "../components/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -21,6 +23,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <BackToTop />
       <Analytics />
     </div>
   );

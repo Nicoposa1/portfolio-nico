@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaBars, FaTimes } from "react-icons/fa";
 import { AiFillFilePdf } from "react-icons/ai";
 
 const Navbar = () => {
@@ -24,6 +24,14 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", handleShadow);
   }, []);
+
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setNav(false);
+  };
 
   const navLinks = [
     { href: "/blog", label: "Blog" },
@@ -110,7 +118,7 @@ const Navbar = () => {
           className="md:hidden cursor-pointer"
           onClick={handleNav}
         >
-          <AiOutlineMenu size={25} />
+          <FaBars size={25} />
         </motion.div>
       </div>
 
@@ -140,7 +148,7 @@ const Navbar = () => {
                     className="p-3 cursor-pointer"
                     onClick={handleNav}
                   >
-                    <AiOutlineClose size={25} />
+                    <FaTimes />
                   </motion.div>
                 </div>
                 <div className="border-b border-gray-200 my-4">
@@ -158,7 +166,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      onClick={() => setNav(false)}
+                      onClick={() => handleScrollToSection(link.href.substring(1))}
                       className="py-4 text-sm"
                     >
                       <Link href={link.href}>

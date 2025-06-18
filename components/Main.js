@@ -35,7 +35,7 @@ const Main = () => {
   ];
 
   return (
-    <div id="home" className="w-full h-screen bg-gradient-to-b from-white to-gray-50">
+    <div id="main" className="w-full h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-[1240px] w-full h-full mx-auto px-4 flex justify-center items-center">
         <motion.div 
           initial={{ opacity: 0 }}
