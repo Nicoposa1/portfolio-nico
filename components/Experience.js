@@ -45,7 +45,7 @@ const Experience = () => {
               company="Boreal IT (Client: Banco Comafi)"
               period="Feb 2025 - Present"
               items={[
-                "Developing and maintaining Banco Comafi&apos;s mobile banking application using React Native.",
+                "Developing and maintaining Banco Comafi's mobile banking application using React Native.",
                 "Improving performance, stability, and user experience for thousands of active users.",
                 "Collaborating with cross-functional teams to implement secure and scalable solutions.",
                 "Ensuring continuous delivery of new features and enhancements for both Android and iOS platforms."
