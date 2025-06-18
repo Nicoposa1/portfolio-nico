@@ -26,6 +26,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { href: "/blog", label: "Blog" },
     { href: "/", label: "Home" },
     { href: "/#experience", label: "Experience" },
     { href: "/#skills", label: "Skills" },
