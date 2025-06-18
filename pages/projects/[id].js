@@ -17,10 +17,11 @@ const ProjectDetail = () => {
       <div className="w-full min-h-screen bg-[#ecf0f3] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-700 mb-4">Project Not Found</h1>
-          <Link href="/#projects">
-            <a className="text-[#5651e5] hover:underline flex items-center justify-center gap-2">
-              <HiArrowLeft /> Back to Projects
-            </a>
+          <Link 
+            href="/#projects"
+            className="text-[#5651e5] hover:underline flex items-center justify-center gap-2"
+          >
+            <HiArrowLeft /> Back to Projects
           </Link>
         </div>
       </div>
@@ -39,11 +40,12 @@ const ProjectDetail = () => {
   return (
     <div className="w-full min-h-screen bg-[#ecf0f3]">
       <div className="max-w-[1240px] mx-auto px-4 py-16">
-        <Link href="/#projects">
-          <a className="inline-flex items-center gap-2 text-[#5651e5] hover:text-[#4a45c4] transition-colors mb-8 group">
-            <HiArrowLeft className="transform group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Projects</span>
-          </a>
+        <Link 
+          href="/#projects"
+          className="inline-flex items-center gap-2 text-[#5651e5] hover:text-[#4a45c4] transition-colors mb-8 group"
+        >
+          <HiArrowLeft className="transform group-hover:-translate-x-1 transition-transform" />
+          <span>Back to Projects</span>
         </Link>
         
         <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -72,9 +74,8 @@ const ProjectDetail = () => {
               <Image
                 src={project.image}
                 alt={project.name}
-                layout="fill"
-                objectFit="cover"
-                className="transform hover:scale-105 transition-transform duration-500"
+                fill
+                className="object-cover transform hover:scale-105 transition-transform duration-500"
                 quality={100}
                 priority
               />

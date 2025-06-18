@@ -22,7 +22,7 @@ const Skills = () => {
   };
 
   return (
-    <div id="skills" className="w-full bg-gradient-to-b from-white to-gray-50 py-16">
+    <div id="skills" className="w-full bg-gray-50 py-16">
       <div className="max-w-[1240px] mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
