@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { skills } from "./data";
 
 const Skills = () => {
@@ -37,36 +38,69 @@ const Skills = () => {
           <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4"></div>
         </motion.div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
-          {data.map((skill, id) => (
-            <motion.div
-              key={id}
-              variants={item}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <div className="relative w-16 h-16">
-                  <Image
-                    src={skill.image}
-                    alt={skill.name}
-                    width={64}
-                    height={64}
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800">{skill.name}</h3>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <SkillsGrid skills={data} />
       </div>
     </div>
+  );
+};
+
+const SkillsGrid = ({ skills }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30, scale: 0.8 },
+    show: { opacity: 1, y: 0, scale: 1 }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "show" : "hidden"}
+      className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+    >
+      {skills.map((skill, id) => (
+        <motion.div
+          key={id}
+          variants={item}
+          whileHover={{ 
+            scale: 1.05,
+            y: -5,
+            transition: { duration: 0.2 }
+          }}
+          className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <motion.div 
+              className="relative w-16 h-16"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Image
+                src={skill.image}
+                alt={skill.name}
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </motion.div>
+            <h3 className="text-xl font-semibold text-gray-800">{skill.name}</h3>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 };
 
