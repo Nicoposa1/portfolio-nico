@@ -35,20 +35,20 @@ const Main = () => {
   ];
 
   return (
-    <div id="main" className="w-full h-screen bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-[1240px] w-full h-full mx-auto px-4 flex justify-center items-center">
+    <div id="main" className="w-full h-screen bg-gradient-to-b from-white to-gray-50 overflow-x-hidden">
+      <div className="max-w-[1240px] w-full h-full mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-center"
+          className="text-center w-full max-w-4xl"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 leading-tight">
               Hi, I&apos;m <span className="text-[#5651e5]">Nicolás</span>
             </h1>
           </motion.div>
@@ -58,7 +58,7 @@ const Main = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 mb-6">
               Software Developer
             </h2>
           </motion.div>
@@ -68,7 +68,7 @@ const Main = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <p className="py-4 text-gray-600 max-w-[700px] mx-auto text-lg leading-relaxed">
+            <p className="py-4 text-gray-600 max-w-[700px] mx-auto text-sm sm:text-base lg:text-lg leading-relaxed px-2">
               I specialize in building Web and Mobile Apps. I&apos;m also deeply passionate about artificial intelligence
               and its transformative potential. I thrive on tackling challenging projects and enjoy developing fast and 
               intuitive Apps that are user-friendly and easy to use.
@@ -79,7 +79,7 @@ const Main = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="flex items-center justify-center gap-6 py-8"
+            className="flex items-center justify-center gap-4 sm:gap-6 py-8 flex-wrap"
           >
             {socialLinks.map((link, index) => (
               <motion.a
@@ -91,9 +91,9 @@ const Main = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group"
               >
-                <div className="rounded-full bg-white shadow-lg shadow-gray-200 p-4 cursor-pointer 
+                <div className="rounded-full bg-white shadow-lg shadow-gray-200 p-3 sm:p-4 cursor-pointer 
                               transition-all duration-300 hover:shadow-xl hover:bg-[#5651e5] hover:text-white">
-                  <span className="text-2xl">{link.icon}</span>
+                  <span className="text-xl sm:text-2xl">{link.icon}</span>
                 </div>
                 <span className="sr-only">{link.label}</span>
               </motion.a>
@@ -104,7 +104,7 @@ const Main = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
           >
             <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
               <motion.div
