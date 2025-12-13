@@ -16,7 +16,16 @@ const Blog = () => {
       readTime: "5 min read",
       tags: ["React Native", "AI", "LLM", "Executorch"]
     },
-    // Puedes agregar más artículos aquí
+    {
+      id: 2,
+      title: "Numerala: entendé tu dinero sin complicaciones",
+      description: "Una app diseñada para ayudarte a entender y gestionar tu dinero de forma simple e intuitiva.",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_YTwL_yRFKgac276Qjf6qQ.png",
+      url: "https://medium.com/@nicoposa57/numerala-entend%C3%A9-tu-dinero-sin-complicaciones-8fb77100e5cc",
+      date: "2024",
+      readTime: "4 min read",
+      tags: ["Fintech", "Personal Finance", "Project"]
+    },
   ];
 
   return (
