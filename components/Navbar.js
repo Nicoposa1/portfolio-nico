@@ -61,7 +61,7 @@ const Navbar = () => {
     },
     {
       icon: <AiFillFilePdf />,
-      href: "/CV-Nicolas-Posa-Software-Developer.pdf",
+      href: "/CV-software-developer-Nicolas-Posa.pdf",
       label: "Resume"
     }
   ];
