@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { projects } from '../../components/data';
 import { HiOutlineChevronDoubleUp, HiArrowLeft } from 'react-icons/hi';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const ProjectDetail = () => {
   const router = useRouter();
@@ -98,16 +99,29 @@ const ProjectDetail = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href={project.code}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#5651e5] text-white rounded-lg hover:bg-[#4a45c4] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
-            >
-              <FaGithub className="text-xl" />
-              <span>View Source Code</span>
-            </a>
-            {project.web && (
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#5651e5] text-white rounded-lg hover:bg-[#4a45c4] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
+              >
+                <FiExternalLink className="text-xl" />
+                <span>Visit Website</span>
+              </a>
+            )}
+            {project.code && (
+              <a
+                href={project.code}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#5651e5] text-white rounded-lg hover:bg-[#4a45c4] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
+              >
+                <FaGithub className="text-xl" />
+                <span>View Source Code</span>
+              </a>
+            )}
+            {project.web && !project.liveUrl && (
               <a
                 href={project.web}
                 target="_blank"

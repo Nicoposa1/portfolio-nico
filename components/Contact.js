@@ -67,7 +67,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="w-full bg-gradient-to-b from-gray-50 to-white py-16">
+    <div id="contact" className="w-full bg-gray-50 py-16">
       <div className="max-w-[1240px] mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="col-span-3 lg:col-span-2 w-full bg-white  shadow-gray-200 rounded-xl p-8"
+            className="col-span-3 lg:col-span-2 w-full bg-white shadow-lg shadow-gray-200 rounded-xl p-8"
           >
             <div className="h-full">
               <div className="mb-8">

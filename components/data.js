@@ -1,5 +1,27 @@
 export const projects = [
   {
+    "id": 10,
+    "name": "Argente",
+    "image": "/argente-landing.png",
+    "skills": "Next.js - Node.js - OpenAI - TypeScript - Tailwind CSS",
+    "code": null,
+    "web": "https://argente.app",
+    "liveUrl": "https://argente.app",
+    "featured": true,
+    "description": "Argente es un sistema de agentes IA que atiende consultas, califica leads y genera respuestas profesionales por WhatsApp, email o chat — las 24 horas, los 7 días de la semana. Pensado para negocios latinoamericanos que quieren responder a cada cliente al instante sin aumentar su equipo. Incluye tiempo de respuesta de 3 segundos, captura automática de leads y setup en 48 horas."
+  },
+  {
+    "id": 11,
+    "name": "Numerala",
+    "image": "/numerala-landing.png",
+    "skills": "Next.js - Node.js - TypeScript - Tailwind CSS - AI",
+    "code": null,
+    "web": "https://numerala.app",
+    "liveUrl": "https://numerala.app",
+    "featured": true,
+    "description": "Numerala es una plataforma inteligente para la gestión y análisis de datos numéricos. Permite a empresas y equipos transformar sus datos en decisiones accionables con dashboards interactivos, reportes automáticos y análisis impulsado por inteligencia artificial."
+  },
+  {
     "id": 1,
     "name": "Coinbase Mobile App",
     "image": "/coinbase1.webp",
@@ -74,64 +96,17 @@ export const projects = [
 ];
 
 export const skills = [
-  {
-    id: 1,
-    name: "javascript",
-    image: "/javascript.svg",
-  },
-  {
-    id: 2,
-    name: "TypeScript",
-    image: "/typescript.svg",
-  },
-  {
-    id: 3,
-    name: "React",
-    image: "/react-2.svg",
-  },
-  {
-    id: 4,
-    name: "React Native",
-    image: "/react-2.svg",
-  },
-  {
-    id: 5,
-    name: "Swift",
-    image: "/swift.svg",
-  },
-  {
-    id: 6,
-    name: "Next.js",
-    image: "/next.svg",
-  },
-  {
-    id: 7,
-    name: "Node.js",
-    image: "/node3.svg",
-  },
-  {
-    id: 8,
-    name: "Express.js",
-    image: "/express.svg",
-  },
-  {
-    id: 9,
-    name: "Redux",
-    image: "/redux.svg",
-  },
-  {
-    id: 10,
-    name: "MongoDB",
-    image: "/mongodb.svg",
-  },
-  {
-    id: 11,
-    name: "TailwindCSS",
-    image: "/tailwindcss.svg",
-  },
-  {
-    id: 12,
-    name: "Firebase",
-    image: "/firebase.svg",
-  },
+  { id: 4,  name: "React Native", image: "/react-2.svg",      category: "Mobile"    },
+  { id: 5,  name: "Swift",        image: "/swift.svg",        category: "Mobile"    },
+  { id: 12, name: "Expo",         image: "/expo.svg",         category: "Mobile"    },
+  { id: 3,  name: "React",        image: "/react-2.svg",      category: "Frontend"  },
+  { id: 6,  name: "Next.js",      image: "/next.svg",         category: "Frontend"  },
+  { id: 11, name: "TailwindCSS",  image: "/tailwindcss.svg",  category: "Frontend"  },
+  { id: 9,  name: "Redux",        image: "/redux.svg",        category: "Frontend"  },
+  { id: 7,  name: "Node.js",      image: "/node3.svg",        category: "Backend"   },
+  { id: 8,  name: "Express.js",   image: "/express.svg",      category: "Backend"   },
+  { id: 10, name: "MongoDB",      image: "/mongodb.svg",      category: "Backend"   },
+  { id: 13, name: "Firebase",     image: "/firebase.svg",     category: "Backend"   },
+  { id: 1,  name: "JavaScript",   image: "/javascript.svg",   category: "Languages" },
+  { id: 2,  name: "TypeScript",   image: "/typescript.svg",   category: "Languages" },
 ];

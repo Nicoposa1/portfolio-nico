@@ -1,26 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { skills } from "./data";
 
+const CATEGORIES = ["All", "Mobile", "Frontend", "Backend", "Languages"];
+
 const Skills = () => {
-  const data = skills;
+  const [active, setActive] = useState("All");
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
+  const filtered = active === "All" ? skills : skills.filter((s) => s.category === active);
 
   return (
     <div id="skills" className="w-full bg-gray-50 py-16">
@@ -29,78 +17,64 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold">
             Skills
           </p>
           <h2 className="py-4 text-3xl font-bold text-gray-800">What I Can Do</h2>
-          <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-[#5651e5] mx-auto mt-4" />
         </motion.div>
 
-        <SkillsGrid skills={data} />
+        {/* Filter buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                active === cat
+                  ? "bg-[#5651e5] text-white shadow-md shadow-[#5651e5]/25"
+                  : "bg-white text-gray-700 border border-gray-200 hover:border-[#5651e5] hover:text-[#5651e5]"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Skills grid */}
+        <motion.div layout className="flex flex-wrap justify-center gap-4">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((skill) => (
+              <motion.div
+                key={skill.id}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                whileHover={{ y: -4, scale: 1.05 }}
+                className="w-28 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center gap-3"
+              >
+                <div className="relative w-10 h-10">
+                  <Image
+                    src={skill.image}
+                    alt={skill.name}
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-sm font-semibold text-gray-700 text-center leading-tight">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
-  );
-};
-
-const SkillsGrid = ({ skills }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 30, scale: 0.8 },
-    show: { opacity: 1, y: 0, scale: 1 }
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={container}
-      initial="hidden"
-      animate={isInView ? "show" : "hidden"}
-      className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-    >
-      {skills.map((skill, id) => (
-        <motion.div
-          key={id}
-          variants={item}
-          whileHover={{ 
-            scale: 1.05,
-            y: -5,
-            transition: { duration: 0.2 }
-          }}
-          className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-        >
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <motion.div 
-              className="relative w-16 h-16"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Image
-                src={skill.image}
-                alt={skill.name}
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </motion.div>
-            <h3 className="text-xl font-semibold text-gray-800">{skill.name}</h3>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
   );
 };
 
