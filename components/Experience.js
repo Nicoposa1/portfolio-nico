@@ -9,7 +9,7 @@ const experiences = [
     period: "Oct 2025 - Present",
     current: true,
     items: [
-      "Developing and maintaining cross-platform mobile applications using React Native.",
+      "Developing and maintaining web applications.",
       "Implementing and optimizing deployments for web applications.",
       "Performing testing and debugging to ensure product quality and user experience.",
       "Collaborating in defining new technical and functional features.",

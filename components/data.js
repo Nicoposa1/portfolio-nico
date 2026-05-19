@@ -109,4 +109,5 @@ export const skills = [
   { id: 13, name: "Firebase",     image: "/firebase.svg",     category: "Backend"   },
   { id: 1,  name: "JavaScript",   image: "/javascript.svg",   category: "Languages" },
   { id: 2,  name: "TypeScript",   image: "/typescript.svg",   category: "Languages" },
+  { id: 14, name: "Java",         image: "/java.svg",         category: "Languages" },
 ];
