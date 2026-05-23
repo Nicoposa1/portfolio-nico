@@ -35,7 +35,7 @@ const Contact = () => {
     },
     {
       icon: <AiFillFilePdf />,
-      href: "/CV-software-developer-Nicolas-Posa.pdf",
+      href: "/CV-Nicolas-Posa-FullStack.pdf",
       label: "Resume"
     }
   ];
