@@ -9,7 +9,7 @@ const Main = () => {
     { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/nicolasposa/", label: "LinkedIn" },
     { icon: <FaGithub />, href: "https://github.com/Nicoposa1", label: "GitHub" },
     { icon: <AiOutlineMail />, href: "mailto:nicoposa57@gmail.com", label: "Email" },
-    { icon: <AiFillFilePdf />, href: "/CV-software-developer-Nicolas-Posa.pdf", label: "Resume" },
+    { icon: <AiFillFilePdf />, href: "/CV-Nicolas-Posa-FullStack.pdf", label: "Resume" },
   ];
 
   return (
